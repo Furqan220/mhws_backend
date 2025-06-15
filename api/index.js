@@ -9,26 +9,26 @@ const multer = require('multer');
 const dayjs = require('dayjs');
 const admin = require('firebase-admin');
 const cron = require('node-cron');
-const userModel = require('./models/user');
-const assessmentModel = require('./models/assessment');
-const exercisesModel = require('./models/exercises');
-const moodJournal = require('./models/moodJournal');
-const sleepJournal = require('./models/sleepJournal');
-const griefJournal = require('./models/griefJournal');
-const reservation = require('./models/reservation');
-const images = require('./models/images');
-const notification = require('./models/notification');
-const serviceAccount = require('./config/push-notification-key.json');
-const calmExercise = require('./models/calmExercise');
-const anxietyRelease = require('./models/anxietyRelease');
-const frustrationExercise = require('./models/frustration');
-const breathingExercise = require('./models/breathing');
-const betterSleepExercise = require('./models/betterSleep');
-const improvePerformanceExercise = require('./models/improvePerformance');
-const helpSupport = require('./models/helpSupport');
-const termsPolicy = require('./models/termsPolicy');
-const reportProblem = require('./models/reportProblem');
-const feedback = require('./models/feedback');
+const userModel = require('../models/user');
+const assessmentModel = require('../models/assessment');
+const exercisesModel = require('../models/exercises');
+const moodJournal = require('../models/moodJournal');
+const sleepJournal = require('../models/sleepJournal');
+const griefJournal = require('../models/griefJournal');
+const reservation = require('../models/reservation');
+const images = require('../models/images');
+const notification = require('../models/notification');
+const serviceAccount = require('../config/push-notification-key.json');
+const calmExercise = require('../models/calmExercise');
+const anxietyRelease = require('../models/anxietyRelease');
+const frustrationExercise = require('../models/frustration');
+const breathingExercise = require('../models/breathing');
+const betterSleepExercise = require('../models/betterSleep');
+const improvePerformanceExercise = require('../models/improvePerformance');
+const helpSupport = require('../models/helpSupport');
+const termsPolicy = require('../models/termsPolicy');
+const reportProblem = require('../models/reportProblem');
+const feedback = require('../models/feedback');
 const mongoose = require("mongoose");
 const serverless = require('serverless-http');
 
@@ -56,7 +56,7 @@ mongoose
       process.exit(1);
     });
   });
- 
+
 
 
 admin.initializeApp({
@@ -985,8 +985,4 @@ app.get('/get-feedback', async (req, res) => {
 });
 
 
-
-app.listen(3000);
-
-
-module.exports.handler = serverless(app);
+module.exports = serverless(app);
