@@ -30,7 +30,6 @@ const termsPolicy = require('./models/termsPolicy');
 const reportProblem = require('./models/reportProblem');
 const feedback = require('./models/feedback');
 const mongoose = require("mongoose");
-const serverless = require('serverless-http');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -988,5 +987,3 @@ app.get('/get-feedback', async (req, res) => {
 
 app.listen(3000);
 
-
-module.exports.handler = serverless(app);
